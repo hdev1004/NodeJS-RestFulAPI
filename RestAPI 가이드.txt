@@ -1,0 +1,29 @@
+# MySQL - Query 
+create database test_database;
+
+use test_database;
+
+create table users (
+    id int not null auto_increment primary key,
+    `name` varchar(10),
+    age int
+)
+
+insert into users(`name`, age) values('이렐리아', 20);
+insert into users(`name`, age) values('베이가', 21);
+insert into users(`name`, age) values('오른', 22);
+
+
+# MySQL - 사용자 생성
+create user 'tester'@'localhost' identified by 'tester';
+grant all privileges on *.* to 'tester'@'localhost';
+ALTER USER 'tester'@'localhost' IDENTIFIED WITH mysql_native_password BY 'tester';
+
+
+# VSC 설치 라이브러리
+npm install express mysql
+npm install nodemon -g
+
+
+서버 열기
+nodemon server.js
